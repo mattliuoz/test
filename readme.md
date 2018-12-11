@@ -32,6 +32,7 @@ You can either complete the test prior to the interview or come in and do it as 
 
 
 ### Notes for improvements
+Notes: I didn't get to parse any of those data files
 Notes: get race data can be asyn, I don't have time to do it  
 Notes: Perhaps more filtering fields can be passed from here 
         i.e. GetRaceResult(DateTime raceDate)
