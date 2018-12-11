@@ -1,9 +1,7 @@
 using System;
-using dotnet_code_challenge.Connectors;
 using dotnet_code_challenge.Models;
 using dotnet_code_challenge.Services;
 using Xunit;
-using Moq;
 
 namespace dotnet_code_challenge.Test
 {
