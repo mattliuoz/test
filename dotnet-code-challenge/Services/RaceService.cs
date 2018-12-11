@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using dotnet_code_challenge.Models;
 
 namespace dotnet_code_challenge.Services
@@ -10,7 +11,7 @@ namespace dotnet_code_challenge.Services
     */
     public interface IRaceService
     {
-        RaceResult GetRaceResult(RaceField raceField);
+        Task<RaceResult> GetRaceResult(RaceField raceField);
     }
 
     public class RaceService : IRaceService
@@ -20,11 +21,12 @@ namespace dotnet_code_challenge.Services
         {
             _raceDataConnectorService = raceDataConnectorService;
         }
-        public RaceResult GetRaceResult(RaceField raceField)
+        public async Task<RaceResult> GetRaceResult(RaceField raceField)
         {
             var connector = _raceDataConnectorService.GetDataConnector(raceField);
-            var raceResult = connector.GetRaceResult();
+            var raceResult = await connector.GetRaceResult();
             return raceResult;
         }
+
     }
 }

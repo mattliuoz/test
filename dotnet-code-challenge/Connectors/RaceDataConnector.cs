@@ -1,30 +1,23 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using dotnet_code_challenge.Models;
 
 namespace dotnet_code_challenge.Connectors
 {
-    public interface IRaceDataConnector
+    public abstract class RaceDataConnector
     {
         /*Notes: Perhaps more filtering fields can be passed from here
         i.e. GetRaceResult(DateTime raceDate)
          so that it can be more useful, but I am not putting any here since not seeing any usecase as yet.
         */
-        RaceResult GetRaceResult();
+        public abstract Task<RaceResult> GetRaceResult();
+
+        public RaceDataConnector(RaceDataSourceConfig config)
+        {
+            _config=config;
+        }
+        private  readonly RaceDataSourceConfig _config;
     }
 
-    public class CaulfieldRaceDataConnector : IRaceDataConnector
-    {
-        public RaceResult GetRaceResult()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
 
-    public class WolferhamptonRaceDataConnector : IRaceDataConnector
-    {
-        public RaceResult GetRaceResult()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
 }
