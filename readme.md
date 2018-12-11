@@ -32,9 +32,10 @@ You can either complete the test prior to the interview or come in and do it as 
 
 
 ### Notes for improvements
-Notes: get race data can be asyn, I don't have time to do it
-Notes: Perhaps more filtering fields can be passed from here
+Notes: get race data can be asyn, I don't have time to do it  
+Notes: Perhaps more filtering fields can be passed from here 
         i.e. GetRaceResult(DateTime raceDate)
          so that it can be more useful, but I am not putting any here since not seeing any usecase as yet.
-Notes: Implement logs for debug warning and error
-Notes: I would impelemnt some validation logic against user input if I have more time
+Notes: Implement logs for debug warning and error  
+Notes: I would impelemnt some validation logic against user input if I have more time  
+More unit tests if I have more time. Just FYI I am trying to stick with TDD
