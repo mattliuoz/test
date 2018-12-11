@@ -1,6 +1,6 @@
 namespace dotnet_code_challenge.Models
 {
-    public class Horse
+    public class HorseInRace
     {
         public string Name { get; set; }
         public string JockeyName { get; set; }

@@ -8,12 +8,12 @@ namespace dotnet_code_challenge
 {
     class Program
     {
-        private readonly IHorseService _horseService;
+        private readonly IRaceService _raceService;
 
         public static int Main(string [] args)
         {
             var serviceProvider = new ServiceCollection()
-                .AddScoped<IHorseService, HorseService>()
+                .AddScoped<IRaceService, RaceService>()
                 .AddScoped<IRaceDataConnectorService, RaceDataConnectorService>()
                 .BuildServiceProvider();
 
@@ -25,14 +25,14 @@ namespace dotnet_code_challenge
             return app.Execute(args);
         }
 
-        public Program(IHorseService horseService)
+        public Program(IRaceService raceService)
         {
-            _horseService = horseService;
+            _raceService = raceService;
         }
 
         private void OnExecute()
         {
-            _horseService.GetHorses(RaceField.Caulfield);
+            _raceService.GetRaceResult(RaceField.Caulfield);
         }
     }
 }
